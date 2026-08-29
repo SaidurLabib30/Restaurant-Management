@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — The Copper Fork</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="login-body">
+  <div class="login-watermark"></div>
+
+  <div class="login-center">
+    <div class="login-card">
+      <div class="login-brand">
+        <img class="login-logo" src="assets/logo/copper-fork-mark.svg" alt="The Copper Fork">
+        <h1>The Copper Fork</h1>
+        <p>Restaurant Management System</p>
+      </div>
+
+      <form id="login-form" class="login-form" autocomplete="off">
+        <label>Username
+          <input type="text" id="username" placeholder="e.g. manager" required>
+        </label>
+        <label>Password
+          <input type="password" id="password" placeholder="••••••••" required>
+        </label>
+        <p class="form-error" id="form-error"></p>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    const errorEl = document.getElementById('form-error');
+
+    // If already logged in, bounce straight to the right home page
+    const existing = Store.session();
+    if (existing) redirectForRole(existing.role);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const user = Store.users().find(u => u.username === username && u.password === password);
+      if (!user) {
+        errorEl.textContent = 'Incorrect username or password.';
+        return;
+      }
+      Store.saveSession({ id: user.id, username: user.username, name: user.name, role: user.role, loginAt: new Date().toISOString() });
+      redirectForRole(user.role);
+    });
+
+    function redirectForRole(role) {
+      const map = { admin: 'pages/dashboard.html', manager: 'pages/dashboard.html', waiter: 'pages/tables.html', kitchen: 'pages/orders.html' };
+      window.location.href = map[role] || 'pages/dashboard.html';
+    }
+  </script>
+</body>
+</html>

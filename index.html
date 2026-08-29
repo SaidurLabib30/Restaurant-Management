@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Copper Fork — Restaurant OS</title>
+<script src="js/storage.js"></script>
+<script>
+  const session = Store.session();
+  if (session) {
+    window.location.href = ROLE_REDIRECT(session.role);
+  } else {
+    window.location.href = 'login.html';
+  }
+  function ROLE_REDIRECT(role) {
+    const map = { admin: 'pages/dashboard.html', manager: 'pages/dashboard.html', waiter: 'pages/tables.html', kitchen: 'pages/orders.html' };
+    return map[role] || 'login.html';
+  }
+</script>
+</head>
+<body>
+</body>
+</html>

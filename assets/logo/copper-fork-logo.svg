@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" width="620" height="180">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Inter:wght@500;600&amp;display=swap');
+      .eyebrow { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.22em; fill: #b8794f; }
+      .word { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 52px; fill: #22201d; }
+      .tag { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: 0.18em; fill: #8a8272; }
+    </style>
+    <linearGradient id="copper2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97a4e"/>
+      <stop offset="55%" stop-color="#c1502e"/>
+      <stop offset="100%" stop-color="#8a3a1f"/>
+    </linearGradient>
+    <linearGradient id="shine2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f3ddd2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f3ddd2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge -->
+  <rect x="8" y="10" width="160" height="160" rx="36" fill="#22201d"/>
+
+  <!-- fork, scaled/translated to sit in the badge -->
+  <g transform="translate(8,10) scale(1)">
+    <rect x="47" y="26" width="9" height="46" rx="4.5" fill="url(#copper2)"/>
+    <rect x="66" y="22" width="9" height="50" rx="4.5" fill="url(#copper2)"/>
+    <rect x="85" y="22" width="9" height="50" rx="4.5" fill="url(#copper2)"/>
+    <rect x="104" y="26" width="9" height="46" rx="4.5" fill="url(#copper2)"/>
+    <path
+      d="M47,71 L113,71 C113,84 99,92 89,92 L89,138 C89,145 85,150 80,150 C75,150 71,145 71,138 L71,92
+         C61,92 47,84 47,71 Z"
+      fill="url(#copper2)"
+    />
+    <path d="M66,23 L75,23 L75,70 L66,70 Z" fill="url(#shine2)"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="198" y="72" class="eyebrow">THE</text>
+  <text x="197" y="122" class="word">Copper Fork</text>
+  <text x="198" y="150" class="tag">RESTAURANT &amp; KITCHEN</text>
+</svg>

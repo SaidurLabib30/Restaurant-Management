@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders &amp; Kitchen — The Copper Fork</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<style>
+  .tabs { display: flex; gap: 6px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .tab-btn { padding: 10px 16px; font-size: 13.5px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+  .tab-btn.active { color: var(--accent-ink); border-color: var(--accent); }
+  .kitchen-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: start; }
+  .kitchen-col-head { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .kitchen-col { min-height: 120px; }
+  .kitchen-col > .ticket { margin-bottom: 12px; }
+  .order-list { display: flex; flex-direction: column; gap: 12px; }
+  .order-card { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .order-card .items-line { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .order-card .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .cart-list { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow-y: auto; }
+  .cart-list li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+  .menu-pick-list { max-height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .menu-pick-item { display: flex; justify-content: space-between; align-items: center; padding: 9px 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+  .menu-pick-item .mi-name { font-weight: 600; font-size: 13.5px; }
+  .menu-pick-item .mi-price { font-size: 12px; color: var(--muted); font-family: var(--font-mono); }
+  .stepper { display: flex; align-items: center; gap: 8px; }
+  .stepper button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); font-weight: 700; }
+</style>
+</head>
+<body>
+  <div id="app-shell"></div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/orders.js"></script>
+</body>
+</html>

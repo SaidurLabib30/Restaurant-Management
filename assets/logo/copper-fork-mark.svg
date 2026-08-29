@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="320" height="320">
+  <defs>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97a4e"/>
+      <stop offset="55%" stop-color="#c1502e"/>
+      <stop offset="100%" stop-color="#8a3a1f"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f3ddd2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f3ddd2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge -->
+  <rect x="4" y="4" width="152" height="152" rx="34" fill="#22201d"/>
+  <rect x="4" y="4" width="152" height="152" rx="34" fill="none" stroke="#3a362f" stroke-width="1"/>
+
+  <!-- fork -->
+  <g>
+    <!-- tines -->
+    <rect x="47" y="26" width="9" height="46" rx="4.5" fill="url(#copper)"/>
+    <rect x="66" y="22" width="9" height="50" rx="4.5" fill="url(#copper)"/>
+    <rect x="85" y="22" width="9" height="50" rx="4.5" fill="url(#copper)"/>
+    <rect x="104" y="26" width="9" height="46" rx="4.5" fill="url(#copper)"/>
+
+    <!-- neck + handle -->
+    <path
+      d="M47,71
+         L113,71
+         C113,84 99,92 89,92
+         L89,138
+         C89,145 85,150 80,150
+         C75,150 71,145 71,138
+         L71,92
+         C61,92 47,84 47,71
+         Z"
+      fill="url(#copper)"
+    />
+
+    <!-- forged highlight -->
+    <path
+      d="M66,23 L75,23 L75,70 L66,70 Z"
+      fill="url(#shine)"
+    />
+  </g>
+</svg>
